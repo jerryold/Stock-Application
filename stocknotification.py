@@ -19,7 +19,7 @@ def sendToLine():
     
     # msg2330=(f' \n 台積電 2330 \n {get_two_float(low2330, 2)} ||{get_two_float(high2330, 2)} \n 現價 {get_two_float(ltr2330, 2)} \n')
     # print(msg2330)
-    msg2330=(f' \n 台積電 2330 \n||開盤價:{get_two_float(open2330, 2)} \n||最高價 {get_two_float(low2330, 2)} \n ||最低價 {get_two_float(high2330, 2)} \n||現價:{get_two_float(ltr2330, 2)} \n')
+    msg2330=(f' \n 台積電 2330 \n||開盤價:{get_two_float(open2330, 2)} \n||最高價 {get_two_float(low2330, 2)} ||最低價 {get_two_float(high2330, 2)} \n||現價:{get_two_float(ltr2330, 2)} \n')
     print(msg2330)
     # current=float(get_two_float(ltr2330, 2))
    
@@ -59,7 +59,7 @@ def sendToLine():
     print(response.text)
 
 #設定特定時間執行
-for i in ["09:00", "09:30", "10:00", "10:30", "11:00","11:30",'12:00','12:30','13:00','13:30','14:00','14:30','15:00']:
+for i in ["09:00", "09:30", "10:00", "10:30", "11:00","11:30",'12:00','12:30','13:00','13:30','14:10','14:20','15:00']:
     schedule.every().monday.at(i).do(sendToLine)
     schedule.every().tuesday.at(i).do(sendToLine)
     schedule.every().wednesday.at(i).do(sendToLine)
