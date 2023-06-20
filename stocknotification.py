@@ -4,6 +4,7 @@ import requests
 import schedule
 import time
 import pycron
+from datetime import datetime
 
 
 
@@ -63,13 +64,23 @@ def sendToLine():
     print(response.text)
 
 #設定特定時間執行
+
+
+def weekday_job(x, t=None):
+    week = datetime.today().weekday()
+    if t is not None and week < 5:
+        schedule.every().day.at(t).do(x)
+
+weekday_job(sendToLine, '17:10')
+weekday_job(sendToLine, '05:10')
+weekday_job(sendToLine, '17:15')
+weekday_job(sendToLine, '05:15')
+
 while True:
-    if pycron.is_now('*/30 * * * 1-5'):  # True every 5 minutes
-        sendToLine()
+    schedule.run_pending()
     time.sleep(60)
 
-
-        
+  
 
 # schedule.every(20).seconds.do(sendToLine) # 每20秒執行一次
 # schedule.every(5).minutes.do(sendToLine)  # 每20秒執行一次
