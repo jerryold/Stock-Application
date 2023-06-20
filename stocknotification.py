@@ -3,11 +3,9 @@ import twstock
 import requests
 import schedule
 import time
+import pycron
 
-from datetime import datetime
-currentDateAndTime = datetime.now()
 
-print("The current date and time is", currentDateAndTime)
 
 
 def get_two_float(f_str, n):
@@ -16,6 +14,7 @@ def get_two_float(f_str, n):
     return ".".join([a, c])
 
 def sendToLine():
+    timenow=time.localtime()
     stock2330 = twstock.realtime.get('2330')
     open2330=  stock2330['realtime']['open']
     low2330 = stock2330['realtime']['low']
@@ -64,19 +63,18 @@ def sendToLine():
     print(response.text)
 
 #設定特定時間執行
-# for i in ["09:00", "09:30", "10:00", "10:30", "11:00","11:30","12:00","12:30","13:00","13:30","14:00","14:30","14:52","15:00","15:30"]:
-for i in ["03:22","03:24","03:26","03:28","03:30"]:
-    schedule.every().monday.at(i).do(sendToLine)
-    schedule.every().tuesday.at(i).do(sendToLine)
-    schedule.every().wednesday.at(i).do(sendToLine)
-    schedule.every().thursday.at(i).do(sendToLine)
-    schedule.every().friday.at(i).do(sendToLine)
+while True:
+    if pycron.is_now('*/2 9-16 * * mon-fri'):  # True every 5 minutes
+        sendToLine()
+    time.sleep(60)
+
+
         
 
 # schedule.every(20).seconds.do(sendToLine) # 每20秒執行一次
 # schedule.every(5).minutes.do(sendToLine)  # 每20秒執行一次
 
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
