@@ -4,6 +4,11 @@ import requests
 import schedule
 import time
 
+from datetime import datetime
+currentDateAndTime = datetime.now()
+
+print("The current date and time is", currentDateAndTime)
+
 
 def get_two_float(f_str, n):
     a, b, c = f_str.partition('.')
