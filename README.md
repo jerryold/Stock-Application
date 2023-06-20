@@ -10,9 +10,11 @@ This project can catch the latest information from the Taiwan Stock Exchange. Af
 3. Clone this repo `https://github.com/jerryold/StockNotification`
 4. Go into the directory `cd StockNotification`
 5. Install the required dependencies `pip install -r requirements.txt`
-6. Add your own Line APIKey to line 24 of `csvchatbot.py`
-####🔑
-![image](https://github.com/jerryold/LangChain-Project/assets/12774427/ee344176-8784-4b45-8936-53fa734d8e56)
+6. Add your own Line Notify APIKey to line 24 of `csvchatbot.py`
+####Line Notify🔑
+![1](https://github.com/jerryold/StockNotification/assets/12774427/8d4d465f-869a-4f30-81c0-b0387e0e56f5)
+![2](https://github.com/jerryold/StockNotification/assets/12774427/a5cbc34c-7757-416f-a51f-a96baa5947fe)
+
 
 7. Start the app `python stocknotify.py`  
 
@@ -23,6 +25,7 @@ We use the Render to be our server, it can build and run all yours apps and webs
 
 
 # The demo screenshot of the app🪧
+
 
   
 
