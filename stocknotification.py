@@ -4,7 +4,7 @@ import requests
 import schedule
 import time
 import pycron
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 
@@ -66,15 +66,13 @@ def sendToLine():
 #設定特定時間執行
 
 
-def weekday_job(x, t=None):
+def weekday_job(x):
     week = datetime.today().weekday()
-    if t is not None and week < 5:
-        schedule.every().day.at(t).do(x)
+    if week<5 and datetime.now().hour >= 9 and datetime.now().hour <= 14:
+        schedule.every(30).minutes.until(timedelta(minutes=360)).do(x)
 
-weekday_job(sendToLine, '17:10')
-weekday_job(sendToLine, '05:10')
-weekday_job(sendToLine, '17:15')
-weekday_job(sendToLine, '05:15')
+
+weekday_job(sendToLine)
 
 while True:
     schedule.run_pending()
