@@ -64,7 +64,7 @@ def sendToLine():
 
 #設定特定時間執行
 while True:
-    if pycron.is_now('*/1 * * * mon'):  # True every 5 minutes
+    if pycron.is_now('*/30 * * * 1'):  # True every 5 minutes
         sendToLine()
     time.sleep(60)
 
