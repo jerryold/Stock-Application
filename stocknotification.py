@@ -68,7 +68,7 @@ def sendToLine():
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if week<5 and datetime.now().hour >= 9 and datetime.now().hour <= 14:
+    if week<5 and datetime.now().hour >= 9 and datetime.now().hour <= 15:
         schedule.every(30).minutes.until(timedelta(minutes=360)).do(x)
 
 
