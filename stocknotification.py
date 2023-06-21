@@ -76,6 +76,7 @@ def weekday_job(x):
     if week<5 and 1<=current_time.now().hour<=7:
         # schedule.every(30).minutes.until(timedelta(minutes=180)).do(x)
         schedule.every(30).seconds.do(x)
+        schedule.every(30).minutes.do(x)
 
 
 weekday_job(sendToLine)
