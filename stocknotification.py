@@ -25,7 +25,7 @@ def sendToLine():
     
     # msg2330=(f' \n 台積電 2330 \n {get_two_float(low2330, 2)} ||{get_two_float(high2330, 2)} \n 現價 {get_two_float(ltr2330, 2)} \n')
     # print(msg2330)
-    msg2330=(f' \n 台積電 2330 \n||開盤價:{get_two_float(open2330, 2)} \n||最高價 {get_two_float(low2330, 2)} ||最低價 {get_two_float(high2330, 2)} \n||現價:{get_two_float(ltr2330, 2)} \n')
+    msg2330=(f' \n 台積電 2330 \n||開盤價:{get_two_float(open2330, 2)} \n||最低價 {get_two_float(low2330, 2)} ||最高價 {get_two_float(high2330, 2)} \n||現價:{get_two_float(ltr2330, 2)} \n')
     print(msg2330)
     # current=float(get_two_float(ltr2330, 2))
    
@@ -35,7 +35,7 @@ def sendToLine():
     low2454 = stock2454['realtime']['low']
     high2454 = stock2454['realtime']['high']
     ltr2454 = stock2454['realtime']['latest_trade_price']
-    msg2454=(f' \n 聯發科 2454 \n||開盤價:{get_two_float(open2454, 2)} \n||最高價:{get_two_float(low2454, 2)} ||最低價:{get_two_float(high2454, 2)} \n||現價:{get_two_float(ltr2454, 2)} \n')
+    msg2454=(f' \n 聯發科 2454 \n||開盤價:{get_two_float(open2454, 2)} \n||最低價:{get_two_float(low2454, 2)} ||最高價:{get_two_float(high2454, 2)} \n||現價:{get_two_float(ltr2454, 2)} \n')
     print(msg2454)
 
     stock2379 = twstock.realtime.get('2379')
@@ -43,7 +43,7 @@ def sendToLine():
     low2379 = stock2379['realtime']['low']
     high2379 = stock2379['realtime']['high']
     ltr2379 = stock2379['realtime']['latest_trade_price']
-    msg2379=(f' \n 瑞昱 2379 \n||開盤價:{get_two_float(open2379, 2)} \n||最高價:{get_two_float(low2379, 2)} ||最低價:{get_two_float(high2379, 2)} \n||現價:{get_two_float(ltr2379, 2)} \n')
+    msg2379=(f' \n 瑞昱 2379 \n||開盤價:{get_two_float(open2379, 2)} \n||最低價:{get_two_float(low2379, 2)} ||最高價:{get_two_float(high2379, 2)} \n||現價:{get_two_float(ltr2379, 2)} \n')
     print(msg2379)
 
     stock8299 = twstock.realtime.get('8299')
@@ -51,7 +51,7 @@ def sendToLine():
     low8299 = stock8299['realtime']['low']
     high8299 = stock8299['realtime']['high']
     ltr8299 = stock8299['realtime']['latest_trade_price']
-    msg8299=(f' \n 群聯 8299 \n||開盤價:{get_two_float(open8299, 2)} \n||最高價:{get_two_float(low8299, 2)} ||最低價:{get_two_float(high8299, 2)} \n||現價:{get_two_float(ltr8299, 2)} \n')
+    msg8299=(f' \n 群聯 8299 \n||開盤價:{get_two_float(open8299, 2)} \n||最低價:{get_two_float(low8299, 2)} ||最高價:{get_two_float(high8299, 2)} \n||現價:{get_two_float(ltr8299, 2)} \n')
     print(msg8299)
 
     url = "https://notify-api.line.me/api/notify"
@@ -64,16 +64,16 @@ def sendToLine():
     response = requests.request("POST", url, headers=headers, data=payload2)
     print(response.text)
 
-now=datetime.now()
-timezone=pytz.timezone('Asia/Singapore')
-current_time=now.astimezone(timezone)
 #設定特定時間執行
+now1=datetime.now()
+timezone=pytz.timezone('Asia/Singapore')
+current_time=now1.astimezone(timezone)
 
 
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if week<5 and datetime.now().hour >= 9:
+    if week<5 and current_time.now().hour >= 9:
         # schedule.every(30).minutes.until(timedelta(minutes=360)).do(x)
         schedule.every(30).seconds.until(timedelta(seconds=180)).do(x)
 
