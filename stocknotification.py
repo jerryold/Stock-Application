@@ -73,7 +73,7 @@ current_time=now1.astimezone(timezone)
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if week<5 and current_time.now().hour >= 4:
+    if week<5 and current_time.now().hour >= 3:
         # schedule.every(30).minutes.until(timedelta(minutes=360)).do(x)
         schedule.every(30).seconds.until(timedelta(seconds=180)).do(x)
 
