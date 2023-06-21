@@ -1,5 +1,5 @@
 # Stocknotification📕
-This project can catch the latest information from the Taiwan Stock Exchange. After the user specified the stock number, the chatbot will return the latest information of the stock. Then return the high price,low price,open price and current price.Taiwan Stock Exchange<a href="https://www.twse.com.tw/zh/">
+This project can catch the latest information from the Taiwan Stock Exchange. After the user specified the stock number, the chatbot will return the latest information of the stock. Then return the high price,low price,open price and current price.<a href="https://www.twse.com.tw/zh/">Taiwan Stock Exchange</a>
 
 
 # Introduction 🚀
@@ -21,7 +21,7 @@ This project can catch the latest information from the Taiwan Stock Exchange. Af
 
 
 # Server Summary📙
-We use the Render to be our server, it can build and run all yours apps and website with free of charge. It is very easy to use and you can use it to deploy your app in a short time. Render<a href="https://render.com/">
+We use the Render to be our server, it can build and run all yours apps and website with free of charge. It is very easy to use and you can use it to deploy your app in a short time. <a href="https://render.com/">Render</a>
 
 
 # The demo screenshot of the app🪧
