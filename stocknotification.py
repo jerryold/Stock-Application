@@ -4,6 +4,7 @@ import requests
 import schedule
 import time
 import pycron
+import pytz
 from datetime import datetime, timedelta
 
 
@@ -64,11 +65,11 @@ def sendToLine():
     print(response.text)
 
 #設定特定時間執行
-
+datetime_in_Singapore = datetime.now(pytz.timezone('Asia/Singapore'))
 
 def weekday_job(x):
-    week = datetime.today().weekday()
-    if week<5 and datetime.now().hour >= 9:
+    week = datetime_in_Singapore.today().weekday()
+    if week<5 and datetime_in_Singapore.now().hour >= 9:
         # schedule.every(30).minutes.until(timedelta(minutes=360)).do(x)
         schedule.every(30).seconds.until(timedelta(seconds=180)).do(x)
 
