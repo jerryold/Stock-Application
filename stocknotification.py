@@ -16,7 +16,7 @@ def get_two_float(f_str, n):
     return ".".join([a, c])
 
 def sendToLine():
-    timenow=time.localtime()
+    
     stock2330 = twstock.realtime.get('2330')
     open2330=  stock2330['realtime']['open']
     low2330 = stock2330['realtime']['low']
@@ -73,10 +73,10 @@ current_time=now1.astimezone(timezone)
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if week<5 and 1<=current_time.now().hour<=7:
-        # schedule.every(30).minutes.until(timedelta(minutes=180)).do(x)
-        # schedule.every(30).seconds.do(x)
-        schedule.every(30).minutes.do(x)
+    if week<5 and 9<=current_time.now().hour<=14:
+        schedule.every(30).seconds.do(x)
+     
+        
 
 
 weekday_job(sendToLine)
