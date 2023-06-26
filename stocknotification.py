@@ -120,8 +120,8 @@ week = datetime.today().weekday()
 
 # Creating a scheduler object.
 scheduler = BlockingScheduler()
-scheduler.add_job(sendToLine1, "cron", minute='30',hour='1-8')
-scheduler.add_job(sendToLine2, "cron", minute='20,40,45,50,53',hour='1-8')
+scheduler.add_job(sendToLine1, "cron", minute='20,40',hour='1-6',day_of_week='mon-fri')
+scheduler.add_job(sendToLine2, "cron", minute='15,35,55',hour='1-6',day_of_week='mon-fri')
 # Starting the scheduler in a separate thread.
 scheduler.start()
       
