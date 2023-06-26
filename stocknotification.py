@@ -75,10 +75,8 @@ def weekday_job(x):
     week = datetime.today().weekday()
     if week<5 and 1<=current_time.now().hour<=6:        
         schedule.every().hours.at(":25").do(x)
-        schedule.every().hours.at(":50").do(x)
-
-     
-        
+        schedule.every().hours.at(":50").do(x) 
+      
 
 
 weekday_job(sendToLine)
