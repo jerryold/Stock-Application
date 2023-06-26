@@ -68,12 +68,12 @@ def sendToLine():
 now1=datetime.now()
 timezone=pytz.timezone('Asia/Singapore')
 current_time=now1.astimezone(timezone)
-
+datetime.date.today().toordinal()%7 + 1
 
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if week<5 and 9<=current_time.now().hour<=14:
+    if 2<=week<=6 and 1<=current_time.now().hour<=6:
         schedule.every(30).seconds.do(x)
      
         
