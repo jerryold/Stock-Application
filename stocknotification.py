@@ -74,7 +74,7 @@ current_time=now1.astimezone(timezone)
 def weekday_job(x):
     week = datetime.today().weekday()
     if week<5 and 1<=current_time.now().hour<=6:
-        schedule.every(40).minutes.do(x)
+        schedule.every(20).minutes.do(x)
      
         
 
@@ -82,8 +82,14 @@ def weekday_job(x):
 weekday_job(sendToLine)
 
 while True:
-    schedule.run_pending()
-    time.sleep(60)
+    try:
+        schedule.run_pending()
+        time.sleep(1200)
+    except Exception as e:
+        sendToLine(e)
+        time.sleep(1200)
+
+
 
   
 
