@@ -73,7 +73,7 @@ datetime.today().toordinal()%7 + 1
 
 def weekday_job(x):
     week = datetime.today().weekday()
-    if 2<=week<=6 and 1<=current_time.now().hour<=6:
+    if week<5 and 1<=current_time.now().hour<=6:
         schedule.every(30).seconds.do(x)
      
         
