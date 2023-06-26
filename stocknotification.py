@@ -68,7 +68,7 @@ def sendToLine():
 now1=datetime.now()
 timezone=pytz.timezone('Asia/Singapore')
 current_time=now1.astimezone(timezone)
-datetime.date.today().toordinal()%7 + 1
+datetime.today().toordinal()%7 + 1
 
 
 def weekday_job(x):
