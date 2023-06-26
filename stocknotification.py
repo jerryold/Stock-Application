@@ -6,6 +6,8 @@ import time
 import pycron
 import pytz
 from datetime import datetime, timedelta
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 
 
 
@@ -112,31 +114,19 @@ now1=datetime.now()
 timezone=pytz.timezone('Asia/Singapore')
 current_time=now1.astimezone(timezone)
 
-
-def weekday_job1(x):
-    week = datetime.today().weekday()
-    if week<5 and 1<=current_time.now().hour<=6:        
-       schedule.every().hours.at(":20").do(x) 
-
-def weekday_job2(x):
-    week = datetime.today().weekday()
-    if week<5 and 1<=current_time.now().hour<=6:        
-       schedule.every().hours.at(":40").do(x) 
+week = datetime.today().weekday()
+   
 
 
+# Creating a scheduler object.
+scheduler = BlockingScheduler()
+scheduler.add_job(sendToLine1, "cron", minute='30',hour='1-8')
+scheduler.add_job(sendToLine2, "cron", minute='20,40',hour='1-8')
+# Starting the scheduler in a separate thread.
+scheduler.start()
       
 
 
-weekday_job1(sendToLine2)
-weekday_job2(sendToLine1)
-while True:
-    try:
-        schedule.run_pending()
-        time.sleep(60)
-    except Exception as e:
-        sendToLine1(e)
-        sendToLine2(e)
-        time.sleep(60)
 
 
 
