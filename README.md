@@ -25,9 +25,7 @@ We use the Render to be our server, it can build and run all yours apps and webs
 
 
 # The demo screenshot of the app🪧
-#demo screen1
 ![image](https://github.com/jerryold/StockNotification/assets/12774427/d952266e-60ee-4939-bd64-1b4850226b93)
-#demo screen2
 ![image](https://github.com/jerryold/StockNotification/assets/12774427/3ad1c549-b617-4e5e-9d38-40d1f9a2e6ab)
 
 
