@@ -157,9 +157,9 @@ def sendToLine3():#AI相關股票
 
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg2356,msg3231,msg2382,msg4938,msg2324,msg3515}} #AI相關股票
+    payload3={'message':{msg2356,msg3231,msg2382,msg4938,msg2324,msg3515}} #AI相關股票
     headers = {'Authorization': 'Bearer ' + '2ewKp4GssKQH9zY2VAwj07WMKxWYj3Ij6n5j1S0vSxV'}
-    response = requests.request("POST", url, headers=headers, data=payload1)
+    response = requests.request("POST", url, headers=headers, data=payload3)
 
     
 
