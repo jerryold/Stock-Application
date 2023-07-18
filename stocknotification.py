@@ -101,9 +101,9 @@ def sendToLine2():
     
 
     url = "https://notify-api.line.me/api/notify"
-    payload1={'message':{msg2330,msg2454,msg2379,msg8299}} #台積電 and 聯發科 and 瑞昱 and 群聯message
+    payload2={'message':{msg2330,msg2454,msg2379,msg8299}} #台積電 and 聯發科 and 瑞昱 and 群聯message
     headers = {'Authorization': 'Bearer ' + '2ewKp4GssKQH9zY2VAwj07WMKxWYj3Ij6n5j1S0vSxV'}
-    response = requests.request("POST", url, headers=headers, data=payload1)
+    response = requests.request("POST", url, headers=headers, data=payload2)
     
     # print(response.text)
     
