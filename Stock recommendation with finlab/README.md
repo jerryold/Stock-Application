@@ -15,9 +15,10 @@ The project uses the following technical indicators:
 - RSV: A component of the Stochastic Oscillator, it measures the closing price in relation to the range of prices over a certain period of time.
 - Momentum (動能指標): Measures the rate of change in the closing price.
 
-These indicators are calculated over various periods and used as features for the machine learning models.The below is feature importance
+These indicators are calculated over various periods and used as features for the machine learning models.The below is feature importance of technicial indicators
 
-![Alt text](image.png)
+![image](https://github.com/jerryold/Stock-Application/assets/12774427/e2b187df-82c3-4d6a-bbbd-af6683a624fc)
+
 
 ```python
 def bias(n):
@@ -70,7 +71,8 @@ features = {
 ```
 
 ## Compare with Stock 0050 result
-![Alt text](image-1.png)
+![image](https://github.com/jerryold/Stock-Application/assets/12774427/ad8071ea-9e58-4b65-9e40-f7f330e707a3)
+
 
 
 
