@@ -79,4 +79,6 @@ features = {
 ## Usage
 
 To use this project, you will need to install the TA-Lib package and have a basic understanding of the models and technical indicators used.
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#ta-lib
+
 
