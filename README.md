@@ -7,8 +7,8 @@ This project can catch the latest information from the Taiwan Stock Exchange. Af
 2. Activate it: 
    - Windows:`.\stocknotify\Scripts\activate`
    - Mac: `source csvchatbot/bin/activate`
-3. Clone this repo `https://github.com/jerryold/StockNotification`
-4. Go into the directory `cd StockNotification`
+3. Clone this repo `https://github.com/jerryold/Stock-Appication`
+4. Go into the directory `cd Stock-Appication`
 5. Install the required dependencies `pip install -r requirements.txt`
 6. Add your own Line Notify APIKey to line 24 of `csvchatbot.py`
 ####Line Notify🔑
