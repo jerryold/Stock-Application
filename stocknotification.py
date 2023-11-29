@@ -174,7 +174,7 @@ week = datetime.today().weekday()
 
 # Creating a scheduler object.
 scheduler = BlockingScheduler()
-scheduler.add_job(sendToLine1, "cron", minute='20',hour='7',day_of_week='mon-fri')
+# scheduler.add_job(sendToLine1, "cron", minute='20',hour='7',day_of_week='mon-fri')
 scheduler.add_job(sendToLine2, "cron", minute='25,45',hour='1-6',day_of_week='mon-fri')
 scheduler.add_job(sendToLine3, "cron", minute='10,30,50',hour='1-6',day_of_week='mon-fri')
 # Starting the scheduler in a separate thread.
