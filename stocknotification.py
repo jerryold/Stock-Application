@@ -5,6 +5,7 @@ import schedule
 import time
 import pycron
 import pytz
+import lxml
 from datetime import datetime, timedelta
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
